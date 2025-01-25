@@ -4,6 +4,7 @@ body {
   margin: 0;
   background: #f4f4f9;
   color: #333;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
 /* Header Styling */
@@ -12,6 +13,11 @@ header {
   color: white;
   padding: 10px 0;
   text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10; /* Keep header above other content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Navigation Styling */
@@ -19,10 +25,9 @@ nav {
   display: flex;
   justify-content: center;
   gap: 20px;
-  padding: 10px 0;
 }
 
-/* Test Tube Styling */
+/* Test Tube Buttons */
 .test-tube {
   padding: 10px 20px;
   background: linear-gradient(to bottom, #88c9f2, #1e81b0);
@@ -31,6 +36,8 @@ nav {
   color: white;
   text-align: center;
   cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
   position: relative;
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
@@ -54,27 +61,26 @@ nav {
 }
 
 /* Section Styling */
-.section {
-  display: none; /* Hidden by default */
-  padding: 20px;
-  text-align: center;
+section {
+  padding: 100px 20px;
+  min-height: 100vh; /* Full viewport height */
+  scroll-margin-top: 70px; /* Offset to account for fixed header */
 }
 
-.section.active {
-  display: block; /* Only the active section is visible */
-  animation: fadeIn 0.5s ease-in-out;
+#home {
+  background: #f4f4f9;
 }
 
-/* Animation for smooth transition */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+#publications {
+  background: #e9ecef;
+}
+
+#research {
+  background: #dee2e6;
+}
+
+#contact {
+  background: #ced4da;
 }
 
 /* Headings */
@@ -82,4 +88,24 @@ h1 {
   color: #343a40;
   font-size: 24px;
   margin-bottom: 20px;
+}
+
+/* General Links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* List Styling */
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
 }
