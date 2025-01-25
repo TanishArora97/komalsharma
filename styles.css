@@ -1,0 +1,85 @@
+/* General Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f9;
+  color: #333;
+}
+
+/* Header Styling */
+header {
+  background: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Navigation Styling */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+/* Test Tube Styling */
+.test-tube {
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #88c9f2, #1e81b0);
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.test-tube:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.test-tube::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+
+/* Section Styling */
+.section {
+  display: none; /* Hidden by default */
+  padding: 20px;
+  text-align: center;
+}
+
+.section.active {
+  display: block; /* Only the active section is visible */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation for smooth transition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Headings */
+h1 {
+  color: #343a40;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
