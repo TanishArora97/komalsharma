@@ -1,111 +1,87 @@
-/* General Body Styling */
+/* General Styling */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
   background: #f4f4f9;
   color: #333;
-  scroll-behavior: smooth; /* Enables smooth scrolling */
+  scroll-behavior: smooth;
 }
 
-/* Header Styling */
+/* Header */
 header {
-  background: #333;
-  color: white;
-  padding: 10px 0;
-  text-align: center;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10; /* Keep header above other content */
+  background: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  z-index: 10;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Navigation Styling */
+/* Navigation */
 nav {
   display: flex;
-  justify-content: center;
   gap: 20px;
 }
 
-/* Test Tube Buttons */
 .test-tube {
   padding: 10px 20px;
   background: linear-gradient(to bottom, #88c9f2, #1e81b0);
   border-radius: 15px 15px 0 0;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  color: white;
-  text-align: center;
-  cursor: pointer;
   text-decoration: none;
+  color: white;
   font-weight: bold;
-  position: relative;
-  overflow: hidden;
+  cursor: pointer;
   transition: transform 0.2s ease-in-out;
 }
 
 .test-tube:hover {
   transform: scale(1.1);
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
 }
 
-.test-tube::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 10px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(245, 245, 245, 0.9)),
+              url('background-chemistry.jpg') no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  padding: 20px;
 }
 
-/* Section Styling */
-section {
-  padding: 100px 20px;
-  min-height: 100vh; /* Full viewport height */
-  scroll-margin-top: 70px; /* Offset to account for fixed header */
+.name {
+  font-family: 'Caveat', cursive;
+  font-size: 4rem; /* Larger cursive script */
+  color: #1e81b0;
+  margin: 0;
 }
 
-#home {
-  background: #f4f4f9;
+.subheading {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  color: #555;
+  font-style: italic;
+  margin-top: 10px;
 }
 
-#publications {
-  background: #e9ecef;
+/* Add smooth animations */
+.name::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #1e81b0;
+  margin: 10px auto;
+  transition: width 0.5s ease-in-out;
 }
 
-#research {
-  background: #dee2e6;
-}
-
-#contact {
-  background: #ced4da;
-}
-
-/* Headings */
-h1 {
-  color: #343a40;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-/* General Links */
-a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* List Styling */
-ul {
-  list-style-type: disc;
-  margin-left: 20px;
-}
-
-ul li {
-  margin-bottom: 10px;
+.name:hover::after {
+  width: 50%;
 }
