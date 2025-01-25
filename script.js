@@ -1,16 +1,13 @@
-const testTubes = document.querySelectorAll('.test-tube');
-const sections = document.querySelectorAll('.section');
+const homeSection = document.querySelector('#home');
+const tagline = document.querySelector('.tagline');
+const detailedDescription = document.querySelector('.detailed-description');
 
-testTubes.forEach(tube => {
-  tube.addEventListener('click', () => {
-    const sectionId = tube.getAttribute('data-section');
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY;
 
-    // Hide all sections
-    sections.forEach(section => {
-      section.classList.remove('active');
-    });
-
-    // Show the clicked section
-    document.getElementById(sectionId).classList.add('active');
-  });
+  // If scrolled past the hero section, revert to tagline
+  if (scrollPosition > homeSection.offsetHeight) {
+    tagline.style.opacity = 1;
+    detailedDescription.style.opacity = 0;
+  }
 });
