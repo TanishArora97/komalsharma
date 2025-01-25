@@ -4,7 +4,6 @@
   src: url('./fonts/Caveat-Regular.ttf') format('truetype'),
        url('./fonts/Caveat-Regular.woff2') format('woff2');
   font-weight: 400;
-  font-style: normal;
 }
 
 @font-face {
@@ -12,22 +11,15 @@
   src: url('./fonts/Roboto-Regular.ttf') format('truetype'),
        url('./fonts/Roboto-Regular.woff2') format('woff2');
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Roboto-Bold';
-  src: url('./fonts/Roboto-Bold.ttf') format('truetype'),
-       url('./fonts/Roboto-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
 }
 
 /* General Styling */
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background: #f4f4f9;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(245, 245, 245, 0.8)),
+              url('./images/background.jpg') no-repeat center center;
+  background-size: contain;
   color: #333;
   scroll-behavior: smooth;
 }
@@ -74,16 +66,43 @@ nav {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(245, 245, 245, 0.9)),
-              url('background-chemistry.jpg') no-repeat center center;
-  background-size: cover;
   text-align: center;
   padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-image-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  animation: popUp 1s ease-out forwards;
+  opacity: 0;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .name {
   font-family: 'Caveat', cursive;
-  font-size: 4rem; /* Larger cursive script */
+  font-size: 3.5rem;
   color: #1e81b0;
   margin: 0;
 }
@@ -94,19 +113,4 @@ nav {
   color: #555;
   font-style: italic;
   margin-top: 10px;
-}
-
-/* Add smooth animations */
-.name::after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 3px;
-  background: #1e81b0;
-  margin: 10px auto;
-  transition: width 0.5s ease-in-out;
-}
-
-.name:hover::after {
-  width: 50%;
 }
