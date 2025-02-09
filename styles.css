@@ -252,15 +252,139 @@ nav {
   color: #555;
 }
 /* Section Backgrounds */
+/* Publications Section */
 #publications {
-  background: linear-gradient(to bottom, #f3e5f5, #e1bee7);
-  color: #333;
-  padding: 50px 20px; /* Dynamic height based on content */
+  background: linear-gradient(to bottom, #f4f4f9, #e0e0e0); /* Subtle gray gradient */
+  padding: 50px 20px;
 }
 
+/* Section Title */
+.section-title {
+  font-family: 'Caveat', cursive;
+  font-size: 2.5rem;
+  color: #1e81b0;
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-#contact {
-  background: linear-gradient(to bottom, #e8f5e9, #a5d6a7);
+/* Publications Container */
+.publications-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Publication Card */
+.publication-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.publication-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Alternate Left-Right Layout */
+.publication-card:nth-child(odd) {
+  flex-direction: row;
+}
+
+.publication-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Publication Image */
+.publication-image {
+  width: 200px; /* Increased size */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Publication Details */
+.publication-details {
+  flex: 1; /* Ensure details take up the remaining space */
+}
+
+.publication-details h3 {
+  font-size: 1.2rem;
   color: #333;
-  padding: 50px 20px;
+  margin: 0 0 10px;
+}
+
+.publication-details p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.access-link {
+  color: #1e81b0;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  display: inline-block;
+  transition: color 0.2s;
+}
+
+.access-link:hover {
+  color: #0d47a1;
+}
+
+/* Contact Section */
+#contact {
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa); /* Subtle white-to-light-gray gradient */
+  padding: 30px 20px; /* Reduced padding */
+  text-align: center;
+}
+
+/* Section Title */
+.section-title {
+  font-family: 'Caveat', cursive;
+  font-size: 2rem; /* Slightly smaller title */
+  color: #1e81b0;
+  margin-bottom: 20px;
+}
+
+/* Contact Links */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Reduced gap between icons */
+}
+
+/* Individual Contact Link */
+.contact-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem; /* Slightly smaller text */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-link:hover {
+  transform: translateY(-5px);
+  color: #1e81b0;
+}
+
+/* Icon Styling */
+.contact-link img {
+  width: 50px; /* Slightly smaller icons */
+  height: 50px;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+}
+
+.contact-link:hover img {
+  transform: scale(1.1);
 }

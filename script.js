@@ -11,3 +11,23 @@ window.addEventListener('scroll', () => {
     detailedDescription.style.opacity = 0;
   }
 });
+
+// JavaScript to Sort Publications by Year
+// Sort publications dynamically by year
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.publications-container');
+  const cards = Array.from(container.children);
+
+  cards.sort((a, b) => b.dataset.year - a.dataset.year); // Sort descending by year
+
+  cards.forEach(card => container.appendChild(card)); // Reorder in DOM
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth',
+    });
+  });
+});
